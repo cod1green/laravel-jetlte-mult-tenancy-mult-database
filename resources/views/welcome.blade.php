@@ -50,6 +50,10 @@
                 </g>
             </svg>
 
+            @if(\Spatie\Multitenancy\Models\Tenant::checkCurrent())
+                <h1>{{ app('currentTenant')->name }}</h1>
+            @endif
+
             <div class="card shadow-sm">
                 <div class="row">
                     <div class="col-md-6 pr-0">

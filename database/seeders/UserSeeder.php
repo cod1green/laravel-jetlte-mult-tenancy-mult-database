@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         User::create(
             [
                 'id' => 1,
-                'name' => 'Administrator',
+                'name' => 'Admin',
                 'email' => env('APP_ADMIN_EMAIL', 'admin@admin.com'),
                 'password' => env('APP_ADMIN_PASSWORD', 'admin'),
                 'email_verified_at' => now(),
