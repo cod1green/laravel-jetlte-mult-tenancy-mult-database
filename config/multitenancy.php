@@ -8,7 +8,7 @@ use Spatie\Multitenancy\Actions\ForgetCurrentTenantAction;
 use Spatie\Multitenancy\Actions\MakeQueueTenantAwareAction;
 use Spatie\Multitenancy\Actions\MakeTenantCurrentAction;
 use Spatie\Multitenancy\Actions\MigrateTenantAction;
-use Spatie\Multitenancy\Models\Tenant;
+use App\Models\Tenant;
 
 return [
     /*
@@ -57,7 +57,7 @@ return [
      *
      * Set to `null` to use the default connection.
      */
-    'tenant_database_connection_name' => null,
+    'tenant_database_connection_name' => 'tenant',
 
     /*
      * The connection name to reach the landlord database
@@ -68,6 +68,12 @@ return [
      * This key will be used to bind the current tenant in the container.
      */
     'current_tenant_container_key' => 'currentTenant',
+
+    /**
+     * Set it to `true` if you like to cache the tenant(s) routes
+     * in a shared file using the `SwitchRouteCacheTask`.
+     */
+    'shared_routes_cache' => false,
 
     /*
      * You can customize some of the behavior of this package by using our own custom action.
